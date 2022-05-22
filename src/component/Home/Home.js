@@ -1,11 +1,11 @@
 import React from 'react';
-import Slider from './Slider/Slider';
+import HomeSlider from './HomeSlider/HomeSlider';
 import ToolsPart from './ToolsPart/ToolsPart';
 
 const Home = () => {
 	return (
 		<div>
-			<Slider></Slider>
+			<HomeSlider></HomeSlider>
 			<ToolsPart></ToolsPart>
 		</div>
 	);

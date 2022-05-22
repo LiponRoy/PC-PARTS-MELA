@@ -1,0 +1,85 @@
+.mainSld {
+	margin: 0px 0px;
+}
+
+
+
+
+
+/*  */
+.textAll {
+	font-size: 32px;
+	text-align: center;
+    text-transform: uppercase;
+	color: rgb(255, 255, 255);
+	padding: 2px;
+	position: absolute;
+	bottom: 50px;
+	left: 50px;
+	background-color: rgba(167, 5, 5, 0.329);
+	padding: 22px;
+	border-radius: 12px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.textAll .Second-text{
+	font-size: 62px;
+}
+.textAll .third-text {
+	font-size: 62px;
+}
+.textAll .four-text {
+	font-size: 22px;
+}
+
+
+/* ////Fast slide */
+
+.carddMe .iteams .imgPart {
+	position: relative;
+}
+
+.carddMe .iteams .imgPart img {
+	width: 100%;
+	height: 100vh;
+	object-fit: cover;
+}
+
+.leftside {
+	width: 100%;
+	height: 80vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: rgb(26, 26, 26);
+	font-size: 54px;
+	/* border: 5px solid red; */
+}
+
+@media (max-width: 768px) {
+
+.carddMe .iteams .imgPart img {
+		height: 60vh;
+	}
+
+				.textAll {
+						font-size: 16px;
+					text-align: center;
+					text-transform: uppercase;
+					color: rgb(255, 255, 255);
+					padding: 2px;
+					position: absolute;
+					top: 130px;
+					bottom: 130px;
+					padding: 22px;
+					border-radius: 12px;
+	
+				}
+
+
+	
+
+}
