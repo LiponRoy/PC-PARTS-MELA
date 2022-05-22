@@ -2,11 +2,21 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaBars, FaRegWindowClose, FaSearch } from 'react-icons/fa';
 import './Navbar.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../../Firebase.init';
+import { signOut } from 'firebase/auth';
 const NavbarTwo = () => {
+	const [user] = useAuthState(auth);
 	const [showLinks, setShowLink] = useState(false);
+	const navigate = useNavigate();
 
 	const closeFunc = () => {
 		setShowLink(false);
+	};
+	const signOutTask = () => {
+		signOut(auth);
+		navigate('/');
 	};
 	return (
 		<>
@@ -32,9 +42,15 @@ const NavbarTwo = () => {
 							<NavLink onClick={closeFunc} className={({ isActive }) => (isActive ? ' active-myLink' : 'myLink')} to='/signUp'>
 								SignUp
 							</NavLink>
-							<NavLink onClick={closeFunc} className={({ isActive }) => (isActive ? ' active-myLink' : 'myLink')} to='/login'>
-								Login
-							</NavLink>
+							{user ? (
+								<a onClick={signOutTask} className='signout-btn'>
+									Signout
+								</a>
+							) : (
+								<NavLink onClick={closeFunc} className={({ isActive }) => (isActive ? ' active-myLink' : 'myLink')} to='/login'>
+									Login
+								</NavLink>
+							)}
 						</div>
 					</div>
 				</div>

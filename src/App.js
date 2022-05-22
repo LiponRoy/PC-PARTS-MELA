@@ -5,7 +5,7 @@ import Footer from './component/footer/Footer';
 import Home from './component/Home/Home';
 import { Route, Routes } from 'react-router-dom';
 import Login from './component/Login/Login';
-import SignUp from './component/Signup/SignUp';
+import Signup from './component/Signup/Signup';
 
 function App() {
 	return (
@@ -14,7 +14,7 @@ function App() {
 
 			<Routes>
 				<Route path='/' element={<Home />} />
-				<Route path='/signUp' element={<SignUp />} />
+				<Route path='/signUp' element={<Signup />} />
 				<Route path='/login' element={<Login />} />
 
 				{/* <Route path='/manageProduct' element={<ManageProduct />} /> */}
