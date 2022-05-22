@@ -51,6 +51,10 @@ const NavbarTwo = () => {
 									Login
 								</NavLink>
 							)}
+
+							<NavLink onClick={closeFunc} className={({ isActive }) => (isActive ? ' active-myLink' : 'myLink')} to='/'>
+								{user ? user.displayName : 'no user'}
+							</NavLink>
 						</div>
 					</div>
 				</div>
