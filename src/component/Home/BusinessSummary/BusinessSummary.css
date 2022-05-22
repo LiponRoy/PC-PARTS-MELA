@@ -1,0 +1,17 @@
+.bSummary{
+    height: 50vh;
+    background-color: cadetblue;
+    
+
+
+}
+.sectionOne{
+display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction:column;
+    background-color: rgb(7, 76, 78);
+    margin:32px;
+
+    border:2px solid white;
+}
