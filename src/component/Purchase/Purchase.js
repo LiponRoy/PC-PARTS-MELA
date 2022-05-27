@@ -7,11 +7,11 @@ import { useForm } from 'react-hook-form';
 const Purchase = () => {
 	const [QuantityError, setQuantityError] = useState('');
 	const [btnDisabled, setBtnDisabled] = useState(true);
+	const [singleProduct, setSingleProduct] = useState([]);
 
 	const [user] = useAuthState(auth);
 	const { id } = useParams();
 	const navigate = useNavigate();
-	const [singleProduct, setSingleProduct] = useState([]);
 	const url = `http://localhost:4000/product/getSingle/${id}`;
 
 	useEffect(() => {
@@ -46,6 +46,32 @@ const Purchase = () => {
 		}
 		setQuantityError('');
 		console.log(data);
+		AddOrderToDatabase(data.myQuantity);
+	};
+
+	const AddOrderToDatabase = myQuantity => {
+		console.log('add data to database...');
+		const mydata = {
+			name: singleProduct.name,
+			price: singleProduct.price,
+			Quantity: myQuantity,
+			imgUrl: singleProduct.imgUrl,
+			email: user.email,
+		};
+
+		const url = 'http://localhost:4000/order/orderPost';
+		fetch(url, {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json',
+			},
+			body: JSON.stringify(mydata),
+		})
+			.then(response => response.json())
+			.then(datas => console.log(datas));
+
+		// got to my order page
+		navigate('/');
 	};
 
 	// const handleChange = e => {
