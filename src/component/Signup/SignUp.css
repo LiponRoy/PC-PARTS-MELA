@@ -1,10 +1,9 @@
 .ContactHeader {
     height: 100vh;
-    background-color: rgb(104, 184, 14);
-
     display: flex;
     justify-content: center;
     align-items: center;
+    /* flex-direction: column; */
 }
 
 .allText {
@@ -22,11 +21,22 @@
     text-align: start;
 
 }
+
 .my-signup-form{
     background-color: rgba(172, 81, 6, 0.767) !important;
     padding: 12px;
     border-radius: 12px;
 }
+
+.signUpInput {
+    width: 500px;
+    height: 30px;
+    border-radius: 4px;
+    padding-left: 8px;
+
+}
+
+
 .signupBtn{
     background-color: rgba(211, 101, 11, 0.767) !important;
     color: white;

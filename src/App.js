@@ -8,17 +8,23 @@ import Login from './component/Login/Login';
 import Signup from './component/Signup/Signup';
 import RequireAuth from './component/Require-Auth/RequireAuth';
 import Purchase from './component/Purchase/Purchase';
+import Dashboard from './component/deshboard/Dashboard ';
+import MyOrder from './component/deshboard/myOrder/MyOrder';
+import MyProfile from './component/deshboard/myProfile/MyProfile';
+import Signin from './component/signIn/Signin';
+import Register from './component/signIn/register/Register';
 
 function App() {
 	return (
 		<div className='App px-10'>
 			<NavbarTwo></NavbarTwo>
-
 			<Routes>
 				<Route path='/' element={<Home />} />
 
-				<Route path='/signUp' element={<Signup />} />
-				<Route path='/login' element={<Login />} />
+				{/* <Route path='/signUp' element={<Signup />} /> */}
+				<Route path='/register' element={<Register />} />
+				{/* <Route path='/login' element={<Login />} /> */}
+				<Route path='/signin' element={<Signin />} />
 				<Route
 					path='/Purchase/:id'
 					element={
@@ -27,6 +33,17 @@ function App() {
 						</RequireAuth>
 					}
 				/>
+
+				<Route
+					path='/dashboard'
+					element={
+						<RequireAuth>
+							<Dashboard />
+						</RequireAuth>
+					}>
+					<Route index element={<MyOrder />} />
+					<Route path='myProfile' element={<MyProfile />} />
+				</Route>
 
 				{/* <Route path='/manageProduct' element={<ManageProduct />} /> */}
 				{/* <Route path='/addNewItem' element={<AddNewIteam />} /> */}

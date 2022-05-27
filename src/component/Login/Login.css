@@ -12,7 +12,7 @@
 }
 
 .formLipon {
-    background-color: rgb(164, 33, 240);
+    background-color: rgba(172, 81, 6, 0.767) !important;
     padding: 50px;
     border-radius: 8px;
 }

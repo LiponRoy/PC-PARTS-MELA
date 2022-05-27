@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Login.css';
 // for firebase login
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { FcGoogle } from 'react-icons/fc';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { auth, provider } from '../../Firebase.init';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { async } from '@firebase/util';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UseToken from '../hooks/UseToken';
 // hook form and yup
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import Loading from '../Loading/Loading';
 const schema = yup
 	.object({
 		email: yup.string().email().required(),
@@ -34,17 +36,28 @@ const Login = () => {
 	};
 	// for firebase login
 	const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
-	// for navigate
-	const navagate = useNavigate();
-	// Jodi user thake tahole eivabe korte hobe, eikhane home e jabe
+	const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
+	//for insert user to database
+	const [token] = UseToken(user || Guser);
+
+	// valovabe singup hole home e jao
+	const navigate = useNavigate();
 	const location = useLocation();
 	const from = location.state?.from?.pathname || '/';
-	if (user) {
-		navagate(from, { replace: true });
+
+	useEffect(() => {
+		if (token) {
+			navigate(from, { replace: true });
+		}
+	}, [token, navigate]);
+
+	if (loading || Gloading) {
+		return <Loading></Loading>;
 	}
+
 	//go to signup page
 	const goToSignup = () => {
-		navagate('/signup');
+		navigate('/signup');
 	};
 
 	// end firebase login
@@ -70,6 +83,9 @@ const Login = () => {
 							</span>
 						</div>
 					</p>
+					<button onClick={() => signInWithGoogle()} className=' btn btn-outline-secondary mt-1'>
+						<FcGoogle size={20}></FcGoogle> Google login
+					</button>
 
 					<ToastContainer />
 				</div>
