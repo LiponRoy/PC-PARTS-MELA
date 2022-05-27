@@ -1,0 +1,14 @@
+.par-input{
+    display: block;
+    width: 400px;
+    height: 50px;
+    padding-left: 12px;
+    border-radius: 12px;
+    margin-top:12px;
+    color: white;
+    background-color: rgb(141, 141, 141);
+    border: 2px solid, rgb(82, 82, 82);
+}
+.myContain{
+    text-align: start;
+}
