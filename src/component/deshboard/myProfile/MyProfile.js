@@ -46,15 +46,16 @@ const MyProfile = () => {
 		<div>
 			<div class='hero min-h-screen bg-base-200'>
 				<div class='hero-content flex-col lg:flex-row'>
-					<div className='lg:flex-cols mr-20'>
-						<p class='text-3xl font-bold'>{user ? user.displayName : 'no user'}</p>
-						<p class='py-6'>{user ? user.email : 'no user'}</p>
+					<div className='lg:flex-cols mr-20 text-left'>
+						<p class='text-2xl font-bold'>{user ? user.displayName : 'no user'}</p>
+						<p class='py-6'>Email :{user ? user.email : 'no user'}</p>
 						<p class='py-6'>Mob :{singleuser.mobile}</p>
 						<p class='py-6'>Edu :{singleuser.education}</p>
 						<p class='py-6'>Loc :{singleuser.location}</p>
 					</div>
-					<div className='text-left'>
+					<div className='text-left '>
 						<form onSubmit={handleSubmit(onSubmit)}>
+							<h1 className='text-center text-2xl'>Update Your Profile</h1>
 							<div class='form-control'>
 								<input type='number' className='par1-input' placeholder='Phone Number' {...register('mobile', { required: true })} />
 								<br></br>
@@ -73,7 +74,7 @@ const MyProfile = () => {
 								{errors.education && <span className='text-red-500 text-1xl'>education field is required</span>}
 								<br></br>
 
-								<input className='btn' type='submit' />
+								<input className='btn' type='submit' value='Update' />
 							</div>
 						</form>
 					</div>

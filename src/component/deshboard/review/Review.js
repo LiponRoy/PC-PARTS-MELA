@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../../Firebase.init';
-
+import { toast } from 'react-toastify';
 const Review = () => {
 	const [user] = useAuthState(auth);
 	const {
@@ -26,6 +26,7 @@ const Review = () => {
 			.then(response => response.json())
 			.then(datas => {
 				console.log(datas);
+				toast.success('data inserted');
 			});
 	};
 	return (

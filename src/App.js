@@ -15,7 +15,10 @@ import Signin from './component/signIn/Signin';
 import Register from './component/signIn/register/Register';
 import AllUser from './component/deshboard/allUser/AllUser';
 import Review from './component/deshboard/review/Review';
-
+//for Toastify
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import RequireAdmin from './component/RequireAdmin/RequireAdmin';
 function App() {
 	return (
 		<div className='App px-10'>
@@ -46,20 +49,20 @@ function App() {
 					<Route index element={<MyOrder />} />
 					<Route path='myProfile' element={<MyProfile />} />
 					<Route path='review' element={<Review />} />
-					<Route path='allUser' element={<AllUser />} />
+					<Route
+						path='allUser'
+						element={
+							<RequireAdmin>
+								<AllUser />
+							</RequireAdmin>
+						}
+					/>
 				</Route>
 
-				{/* <Route path='/manageProduct' element={<ManageProduct />} /> */}
-				{/* <Route path='/addNewItem' element={<AddNewIteam />} /> */}
-				{/* <Route path='/blog' element={<Blog />} />
-				<Route path='/signup' element={<Signup />} />
-				<Route path='/login' element={<Login />} />
-				<Route path='/myItem' element={<MyItem />} /> */}
-
-				{/* <Route path='/blog/:id' element={<About />} /> */}
 				<Route path='*' element={<NotFound />} />
 			</Routes>
 			<Footer></Footer>
+			<ToastContainer></ToastContainer>
 		</div>
 	);
 }

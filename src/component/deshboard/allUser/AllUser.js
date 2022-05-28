@@ -8,9 +8,14 @@ const AllUser = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		fetch('https://murmuring-chamber-20650.herokuapp.com/user/getAllUser')
+		fetch('http://localhost:4000/alluser', {
+			method: 'GET',
+			headers: {
+				authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+			},
+		})
 			.then(response => response.json())
-			.then(data => setUser(data.allUser));
+			.then(data => setUser(data));
 	}, []);
 	return (
 		<div>
