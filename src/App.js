@@ -14,6 +14,7 @@ import MyProfile from './component/deshboard/myProfile/MyProfile';
 import Signin from './component/signIn/Signin';
 import Register from './component/signIn/register/Register';
 import AllUser from './component/deshboard/allUser/AllUser';
+import Review from './component/deshboard/review/Review';
 
 function App() {
 	return (
@@ -44,6 +45,7 @@ function App() {
 					}>
 					<Route index element={<MyOrder />} />
 					<Route path='myProfile' element={<MyProfile />} />
+					<Route path='review' element={<Review />} />
 					<Route path='allUser' element={<AllUser />} />
 				</Route>
 

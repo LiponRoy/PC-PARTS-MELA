@@ -8,7 +8,7 @@ const ToolsPart = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		fetch('http://localhost:4000/product/getData')
+		fetch('https://murmuring-chamber-20650.herokuapp.com/product/getData')
 			.then(response => response.json())
 			.then(data => setProduct(data.allProduct));
 	}, []);

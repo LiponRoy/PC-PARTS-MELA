@@ -1,0 +1,26 @@
+.reviewContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+  
+}
+
+.par-input {
+    display: block;
+    width: 400px;
+    height: 50px;
+    padding-left: 12px;
+    border-radius: 12px;
+    margin-top: 12px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(121, 121, 121);
+    border: 2px solid, rgb(31, 30, 30)
+}
+
+.errorDesign {
+    color: rgb(255, 255, 255);
+    text-align: start;
+    padding-left: 12px;
+}

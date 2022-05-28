@@ -24,6 +24,17 @@
   color: white;
 }
 
+.everyReview{
+  background-color: brown;
+  color: white;
+  margin: 3px;
+  padding:5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
 .App-link {
   color: #61dafb;
 }

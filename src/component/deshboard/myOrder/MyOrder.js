@@ -11,7 +11,7 @@ const MyOrder = () => {
 
 	useEffect(() => {
 		if (user) {
-			fetch(`http://localhost:4000/getOrder?email=${user.email}`, {
+			fetch(`https://murmuring-chamber-20650.herokuapp.com/getOrder?email=${user.email}`, {
 				method: 'GET',
 				headers: {
 					authorization: `Bearer ${localStorage.getItem('accessToken')}`,
@@ -31,7 +31,7 @@ const MyOrder = () => {
 
 	// delete order
 	const deleteProduct = id => {
-		fetch(`http://localhost:4000/order/deleteOrder/${id}`)
+		fetch(`https://murmuring-chamber-20650.herokuapp.com/order/deleteOrder/${id}`)
 			.then(response => response.json())
 			.then(data => data);
 	};

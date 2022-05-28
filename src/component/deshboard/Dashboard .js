@@ -7,7 +7,6 @@ const Dashboard = () => {
 			<div class='drawer drawer-mobile'>
 				<input id='my-drawer-2' type='checkbox' class='drawer-toggle' />
 				<div class='drawer-content '>
-					<span className='text-3xl'> My desh board</span>
 					<Outlet></Outlet>
 				</div>
 				<div class='drawer-side'>
@@ -19,6 +18,9 @@ const Dashboard = () => {
 						</li>
 						<li>
 							<Link to='/dashboard/myProfile'>My Profile</Link>
+						</li>
+						<li>
+							<Link to='/dashboard/review'>Ad a Review</Link>
 						</li>
 						<li>
 							<Link to='/dashboard/allUser'>All User</Link>

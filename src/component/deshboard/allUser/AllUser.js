@@ -8,7 +8,7 @@ const AllUser = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		fetch('http://localhost:4000/user/getAllUser')
+		fetch('https://murmuring-chamber-20650.herokuapp.com/user/getAllUser')
 			.then(response => response.json())
 			.then(data => setUser(data.allUser));
 	}, []);

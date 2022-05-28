@@ -12,7 +12,7 @@ const Purchase = () => {
 	const [user] = useAuthState(auth);
 	const { id } = useParams();
 	const navigate = useNavigate();
-	const url = `http://localhost:4000/product/getSingle/${id}`;
+	const url = `https://murmuring-chamber-20650.herokuapp.com/product/getSingle/${id}`;
 
 	useEffect(() => {
 		fetch(url)
@@ -59,7 +59,7 @@ const Purchase = () => {
 			email: user.email,
 		};
 
-		const url = 'http://localhost:4000/order/orderPost';
+		const url = 'https://murmuring-chamber-20650.herokuapp.com/order/orderPost';
 		fetch(url, {
 			method: 'POST',
 			headers: {
