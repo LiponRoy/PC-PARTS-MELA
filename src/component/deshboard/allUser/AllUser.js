@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
+import UserRow from './UserRow';
 
 const AllUser = () => {
 	const [user, setUser] = useState([]);
@@ -13,7 +14,24 @@ const AllUser = () => {
 	}, []);
 	return (
 		<div>
-			<div>
+			<div class='overflow-x-auto'>
+				<table class='table w-full'>
+					<thead>
+						<tr>
+							<th>Email</th>
+							<th>Name</th>
+							<th>Job</th>
+							<th>Favorite Color</th>
+						</tr>
+					</thead>
+					<tbody>
+						{user.map(us => (
+							<UserRow key={us._id} user={us}></UserRow>
+						))}
+					</tbody>
+				</table>
+			</div>
+			{/* <div>
 				{user.length != 0 ? (
 					<div>
 						<div className=' grid md:grid-cols-3'>
@@ -29,7 +47,7 @@ const AllUser = () => {
 				) : (
 					<Loading></Loading>
 				)}
-			</div>
+			</div> */}
 		</div>
 	);
 };
