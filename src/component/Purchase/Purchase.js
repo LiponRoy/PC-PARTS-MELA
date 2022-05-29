@@ -36,12 +36,12 @@ const Purchase = () => {
 		// parseInt(data.minimumOrderQuantity);
 		if (parseInt(data.myQuantity) > parseInt(avQ)) {
 			setQuantityError('');
-			setQuantityError('availableQuantity Over');
+			setQuantityError('available Quantity Over');
 			return;
 		}
 		if (parseInt(data.myQuantity) < parseInt(miniQ)) {
 			setQuantityError('');
-			setQuantityError('les than minimumOrderQuantity');
+			setQuantityError('Less than the minimum order quantity');
 			return;
 		}
 		setQuantityError('');
@@ -127,7 +127,7 @@ const Purchase = () => {
 
 							<br></br>
 
-							<input class='btn btn-primary' type='submit' value='PLACE ORDER' />
+							<input class='btn ' type='submit' value='PLACE ORDER' />
 							<h1 className='text-2xl text-red-500'>{QuantityError}</h1>
 						</form>
 					</div>

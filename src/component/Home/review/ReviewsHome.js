@@ -7,7 +7,7 @@ const ReviewsHome = () => {
 	const [review, setReview] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:4000/rv/getRerview')
+		fetch('https://murmuring-chamber-20650.herokuapp.com/rv/getRerview')
 			.then(response => response.json())
 			.then(data => setReview(data.allRevie));
 	}, []);
@@ -19,13 +19,19 @@ const ReviewsHome = () => {
 						<div className=' grid md:grid-cols-6'>
 							{review.map(prod => (
 								<div className='everyReview'>
-									<div key={prod._id}>
-										<span className='name'>{prod.username}</span>
-										<br></br>
-										<span className='rating'>{prod.rating}</span>
-										<br></br>
-										<h4 className='desc'>{prod.desc} </h4>
+									<div class='card w-96 bg-base-100 shadow-xl image-full'>
+										<figure>
+											<img src='https://i.ibb.co/7XMh5H4/jeremy-bezanger-wl8h-Zo-JBSU8-unsplash.jpg' alt='Shoes' />
+										</figure>
+										<div class='card-body'>
+											<h2 class='card-title '>{prod.username}</h2>
+											<span className='rating text-2xl'>{prod.rating}</span>
+											<p className=''>{prod.desc}</p>
+										</div>
 									</div>
+									{/* ../ */}
+
+									{/* ../ */}
 								</div>
 							))}
 						</div>

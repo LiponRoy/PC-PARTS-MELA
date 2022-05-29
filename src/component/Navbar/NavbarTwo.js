@@ -26,7 +26,7 @@ const NavbarTwo = () => {
 	return (
 		<>
 			<div className=''>
-				<div className='liponNav'>
+				<div className='liponNav fixed-top'>
 					<div className='leftSide'>
 						<div className='logo text-white'>
 							<span className='mr-5'>PC PARTS MELA</span>
@@ -54,6 +54,13 @@ const NavbarTwo = () => {
 									DashBoard
 								</NavLink>
 							)}
+
+							<NavLink onClick={closeFunc} className={({ isActive }) => (isActive ? ' active-myLink' : 'myLink')} to='/blog'>
+								Blog
+							</NavLink>
+							<NavLink onClick={closeFunc} className={({ isActive }) => (isActive ? ' active-myLink' : 'myLink')} to='/about'>
+								Portfolio
+							</NavLink>
 							{user ? (
 								<a onClick={signOutTask} className='signout-btn'>
 									Signout

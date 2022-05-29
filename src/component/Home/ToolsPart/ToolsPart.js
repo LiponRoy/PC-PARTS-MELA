@@ -20,16 +20,24 @@ const ToolsPart = () => {
 					<div className=' grid md:grid-cols-3'>
 						{product?.slice(0, 6).map(prod => (
 							<div key={prod._id}>
-								<div class='card '>
-									<img class='card-img-top' src={prod.imgUrl} alt='Card image cap' />
-									<span className='name'>{prod.name}</span>
-									<h4 className='price'>{prod.price} TK</h4>
-									<h4 className=''>availableQuantity: {prod.availableQuantity}</h4>
-									<h4 className=''>minimumOrderQuantity: {prod.minimumOrderQuantity}</h4>
-									<a href='#' class='btn btn-secondary btn-lg mt-2 proBtn' onClick={() => navigate(`/Purchase/${prod._id}`)}>
-										Manage
-									</a>
+								{/* //..... */}
+								<div class='card card-compact w-96 bg-base-100 shadow-xl mycard'>
+									<figure>
+										<img class='card-img-top' src={prod.imgUrl} alt='Card image cap' />
+									</figure>
+									<div class='card-body '>
+										<span className='name'>{prod.name}</span>
+										<h4 className='price'>{prod.price} TK</h4>
+										<h4 className=''>Available Quantity: {prod.availableQuantity}</h4>
+										<h4 className=''>Minimum Order Quantity: {prod.minimumOrderQuantity}</h4>
+										<div class='card-actions justify-center'>
+											<button onClick={() => navigate(`/Purchase/${prod._id}`)} class='btn btn-wide'>
+												Manage
+											</button>
+										</div>
+									</div>
 								</div>
+								{/* //..... */}
 							</div>
 						))}
 					</div>

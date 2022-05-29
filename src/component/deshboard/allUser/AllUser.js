@@ -8,7 +8,7 @@ const AllUser = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		fetch('http://localhost:4000/alluser', {
+		fetch('https://murmuring-chamber-20650.herokuapp.com/alluser', {
 			method: 'GET',
 			headers: {
 				authorization: `Bearer ${localStorage.getItem('accessToken')}`,
@@ -36,23 +36,6 @@ const AllUser = () => {
 					</tbody>
 				</table>
 			</div>
-			{/* <div>
-				{user.length != 0 ? (
-					<div>
-						<div className=' grid md:grid-cols-3'>
-							{user?.map(prod => (
-								<div key={prod._id}>
-									<div class=' '>
-										<h4 className='price'>{prod.email} TK</h4>
-									</div>
-								</div>
-							))}
-						</div>
-					</div>
-				) : (
-					<Loading></Loading>
-				)}
-			</div> */}
 		</div>
 	);
 };

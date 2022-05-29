@@ -6,39 +6,39 @@ import './PopulerTools.css';
 import img1 from '../assets/CR/cat1.jpg';
 import img2 from '../assets/CR/cat2.jpg';
 import img3 from '../assets/CR/cat3.jpg';
-import img4 from '../assets/CR/cat4.jpg';
-import img5 from '../assets/CR/cat5.jpg';
+import img4 from '../assets/CR/cat2.jpg';
+import img5 from '../assets/CR/cat1.jpg';
 
 const PopulerTools = () => {
 	const sliderIteam = [
 		{
-			price: '4,312',
+			price: '1,312',
 
-			desc: 'Smart Wooden Bedroom(12SD4)',
+			desc: 'good quality product',
 			img: img1,
 		},
 		{
-			price: '5,445',
+			price: '2,445',
 
-			desc: 'Best Bed set(120SD4)',
+			desc: 'good quality product',
 			img: img2,
 		},
 		{
-			price: '12,339',
+			price: '2,339',
 
-			desc: 'Smart Chair(7Sc9)',
+			desc: 'good quality product',
 			img: img3,
 		},
 		{
-			price: '10,945',
+			price: '1,945',
 
-			desc: 'Tea Table and Smart Chair(45rt)',
+			desc: 'good quality product',
 			img: img4,
 		},
 		{
-			price: '19,014 ',
+			price: '1,014 ',
 
-			desc: 'Sofa set (234mmx)',
+			desc: 'good quality product',
 			img: img5,
 		},
 	];
@@ -102,11 +102,18 @@ const PopulerTools = () => {
 				<Slider {...settings_3}>
 					{sliderIteam.map(daa => (
 						<div className='cardMeHere'>
-							<div className='iteamsHere text-start'>
-								<img src={daa.img} alt='no img found' width='500' height='500' />
-								<h5>TK {`${daa.price}`} </h5>
-								<h6>{daa.desc}</h6>
+							<div class='card card-compact w-44 bg-base-100 shadow-xl'>
+								<figure>
+									<img src={daa.img} alt='no img found' />
+								</figure>
+								<div class='card-body'>
+									<h2 class='card-title'>TK {`${daa.price}`} </h2>
+									<p>{daa.desc}?</p>
+								</div>
 							</div>
+							{/* ../ */}
+
+							{/* ../ */}
 						</div>
 					))}
 				</Slider>

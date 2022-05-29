@@ -1,0 +1,104 @@
+/* //......................................... */
+/* five part start */
+.MycontactForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin: auto;
+	padding: 20px;
+	font-size: 22px;
+	background-color: rgb(92, 92, 92);
+}
+
+.MycontactForm .topHeading {
+	color: white;
+}
+
+.MycontactForm .contactForm {
+}
+
+.MycontactForm .contactForm form {
+	width: 80%;
+	height: 80%;
+	display: flex;
+	margin-top: 12px;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+
+	/* flex-wrap: wrap; */
+}
+
+.MycontactForm .contactForm form input {
+	width: 500px;
+	height: 35px;
+	font-size: 17px;
+	padding: 18px;
+	background-color: rgb(240, 240, 240);
+
+	/* flex-wrap: wrap; */
+}
+
+.MycontactForm .contactForm form textArea {
+	width: 500px;
+	height: 200px;
+	font-size: 17px;
+	padding: 18px;
+
+	/* flex-wrap: wrap; */
+}
+
+.MycontactForm .contactForm form button {
+	padding: 12px;
+	font-size: 15px;
+	/* margin: 15px; */
+	border-top-right-radius: 16px;
+	border-bottom-right-radius: 16px;
+	width: 500px;
+	height: 45px;
+	background-color: rgba(80, 80, 80, 0.925);
+	border: none;
+	margin-top: 5px;
+	color: white;
+	font-size: 16px;
+
+	/* flex-wrap: wrap; */
+}
+
+@media (max-width: 768px) {
+	.MycontactForm .contactForm form {
+		width: 50%;
+		height: 50%;
+	}
+
+	.MycontactForm .contactForm form input {
+		width: 400px;
+		height: 25px;
+		font-size: 13px;
+
+		/* flex-wrap: wrap; */
+	}
+
+	.MycontactForm .contactForm form textArea {
+		width: 400px;
+		height: 100px;
+		font-size: 13px;
+
+		/* flex-wrap: wrap; */
+	}
+
+	.MycontactForm .contactForm form button {
+		padding: 5px;
+		font-size: 12px;
+
+		width: 300px;
+		height: 40px;
+		border: none;
+		/* margin-top: 2px; */
+		color: white;
+		font-size: 16px;
+
+		/* flex-wrap: wrap; */
+	}
+}

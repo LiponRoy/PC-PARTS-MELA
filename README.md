@@ -1,8 +1,33 @@
-# Getting Started with Create React App
+# PC PARTS MELA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live site Link : https://pc-parts-614c2.web.app/
 
-## Available Scripts
+front end github : https://github.com/programming-hero-web-course1/manufacturer-website-client-side-LiponRoy
+
+back end end github : https://github.com/programming-hero-web-course1/manufacturer-website-server-side-LiponRoy
+
+## Short Description
+
+This is computer parts based web application.Where you can add product,delete product,
+Update product, Used google sign in method, email verification and so on.
+
+## What I have done
+
+-  I have made a nav bar witch include nav link and website logo.
+-  Used Silk Slider to make fantastic image slide show.
+-  Used Google Firebase Auth, include signup, login, reset password, email verification and so on.
+
+*  react routing include protected routing.
+*  include footer component, about component.
+*  Admin functionality.
+
+## library and package used
+
+-  npm Firebase
+-  Bootstrap
+-  react-router-dom
+-  react-toastify
+-  react-icons and so on
 
 In the project directory, you can run:
 

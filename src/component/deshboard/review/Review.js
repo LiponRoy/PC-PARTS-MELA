@@ -15,7 +15,7 @@ const Review = () => {
 	} = useForm();
 	const onSubmit = data => {
 		console.log(data);
-		const url = 'http://localhost:4000/rv/addRerview';
+		const url = 'https://murmuring-chamber-20650.herokuapp.com/rv/addRerview';
 		fetch(url, {
 			method: 'POST',
 			headers: {

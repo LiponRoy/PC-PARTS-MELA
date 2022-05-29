@@ -1,6 +1,7 @@
 import './App.css';
 import NavbarTwo from './component/Navbar/NavbarTwo';
 import NotFound from './component/NotFound/NotFound';
+import Blog from './component/blog/Blog';
 import Footer from './component/footer/Footer';
 import Home from './component/Home/Home';
 import { Route, Routes } from 'react-router-dom';
@@ -19,51 +20,66 @@ import Review from './component/deshboard/review/Review';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RequireAdmin from './component/RequireAdmin/RequireAdmin';
+import ManageProduct from './component/deshboard/manageProduct/ManageProduct';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
+import AddProduct from './component/deshboard/addProduct/AddProduct';
+import ManageOrder from './component/deshboard/manageOrder/ManageOrder';
+import About from './component/About/About';
+const queryClient = new QueryClient();
+
 function App() {
 	return (
-		<div className='App px-10'>
-			<NavbarTwo></NavbarTwo>
-			<Routes>
-				<Route path='/' element={<Home />} />
+		<QueryClientProvider client={queryClient}>
+			<div className='App px-10'>
+				<NavbarTwo></NavbarTwo>
+				<Routes>
+					<Route path='/' element={<Home />} />
 
-				{/* <Route path='/signUp' element={<Signup />} /> */}
-				<Route path='/register' element={<Register />} />
-				{/* <Route path='/login' element={<Login />} /> */}
-				<Route path='/signin' element={<Signin />} />
-				<Route
-					path='/Purchase/:id'
-					element={
-						<RequireAuth>
-							<Purchase />
-						</RequireAuth>
-					}
-				/>
-
-				<Route
-					path='/dashboard'
-					element={
-						<RequireAuth>
-							<Dashboard />
-						</RequireAuth>
-					}>
-					<Route index element={<MyOrder />} />
-					<Route path='myProfile' element={<MyProfile />} />
-					<Route path='review' element={<Review />} />
+					{/* <Route path='/signUp' element={<Signup />} /> */}
+					<Route path='/register' element={<Register />} />
+					{/* <Route path='/login' element={<Login />} /> */}
+					<Route path='/signin' element={<Signin />} />
+					<Route path='/blog' element={<Blog />} />
+					<Route path='/about' element={<About />} />
 					<Route
-						path='allUser'
+						path='/Purchase/:id'
 						element={
-							<RequireAdmin>
-								<AllUser />
-							</RequireAdmin>
+							<RequireAuth>
+								<Purchase />
+							</RequireAuth>
 						}
 					/>
-				</Route>
 
-				<Route path='*' element={<NotFound />} />
-			</Routes>
-			<Footer></Footer>
-			<ToastContainer></ToastContainer>
-		</div>
+					<Route
+						path='/dashboard'
+						element={
+							<RequireAuth>
+								<Dashboard />
+							</RequireAuth>
+						}>
+						<Route index element={<MyOrder />} />
+						<Route path='myProfile' element={<MyProfile />} />
+						<Route path='review' element={<Review />} />
+						<Route
+							path='allUser'
+							element={
+								<RequireAdmin>
+									<AllUser />
+								</RequireAdmin>
+							}
+						/>
+
+						<Route path='manageProduct' element={<ManageProduct />} />
+						<Route path='addProduct' element={<AddProduct />} />
+						<Route path='manageOrder' element={<ManageOrder />} />
+					</Route>
+
+					<Route path='*' element={<NotFound />} />
+				</Routes>
+				<Footer></Footer>
+				<ToastContainer></ToastContainer>
+			</div>
+		</QueryClientProvider>
 	);
 }
 

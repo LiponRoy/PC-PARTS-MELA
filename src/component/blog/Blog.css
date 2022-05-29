@@ -1,0 +1,30 @@
+
+
+.blogPart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 100px;
+
+}
+
+.QA {
+    text-align: start;
+
+}
+
+@media (max-width: 768px) {
+.blogPart {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        padding: 200px;
+
+    }
+
+}

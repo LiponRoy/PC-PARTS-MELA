@@ -18,7 +18,7 @@ const MyProfile = () => {
 	const onSubmit = data => {
 		console.log(data);
 		if (user) {
-			fetch(`http://localhost:4000/updateuser/${user.email}`, {
+			fetch(`https://murmuring-chamber-20650.herokuapp.com/updateuser/${user.email}`, {
 				method: 'PUT',
 				headers: {
 					'content-type': 'application/json',
@@ -34,7 +34,7 @@ const MyProfile = () => {
 
 	// getting user information here
 	useEffect(() => {
-		fetch(`http://localhost:4000/singleuser/${user.email}`)
+		fetch(`https://murmuring-chamber-20650.herokuapp.com/singleuser/${user.email}`)
 			.then(response => response.json())
 			.then(data => {
 				setSingleuser(data);

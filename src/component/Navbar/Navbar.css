@@ -27,7 +27,7 @@ flex: 1;
     font-size: 18px;
     border-radius: 10px;
     /* border-top-left-radius: 12px; */
-    background-color: rgba(218, 25, 25, 0.329);
+    background-color: rgba(25, 218, 70, 0.329);
 }
 .allLink {
 
@@ -77,6 +77,15 @@ flex: 1;
 
 
             @media (max-width: 768px) {
+                .logo span {
+                        border: 1px solid white;
+                        color: white;
+                        padding: 1px;
+                        font-size: 9px;
+                        border-radius: 0px;
+                        /* border-top-left-radius: 12px; */
+                        background-color: rgba(25, 218, 70, 0.329);
+                    }
                                 .toggleBut {
                                         display: flex;
                                         align-items: center;
